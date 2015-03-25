@@ -1,23 +1,23 @@
 <html>
 	<head>
+      
+        <!-- You MUST link to the css js and a cdn to Jquery to work -->
 		<link rel="stylesheet" href="FlipClock-master/compiled/flipclock.css">
-
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 		<script src="FlipClock-master/compiled/flipclock.js"></script>		
+     
+     
 	</head>
 	<body>
+     
+     
+        <!-- This is the only code needed to make the clock -->
 		<div class="clock" style="margin:2em;"></div>
-		
 		<script type="text/javascript">
 			var clock;
-
 			$(document).ready(function() {
-
-				// Calculate the difference in seconds between the future and current date
+				// Put in the date you want to countdown here
 				var diff = new Date('March 27, 2015')
-
-				// Instantiate a coutdown FlipClock
 				clock = $('.clock').FlipClock(diff, {
 					clockFace: 'DailyCounter',
 					countdown: true, 
@@ -25,6 +25,8 @@
 				});
 			});
 		</script>
+     
+     
 		
 	</body>
 </html>
