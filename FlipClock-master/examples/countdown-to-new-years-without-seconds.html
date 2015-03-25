@@ -1,10 +1,10 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="FlipClock-master/compiled/flipclock.css">
+		<link rel="stylesheet" href="../compiled/flipclock.css">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		<script src="FlipClock-master/compiled/flipclock.js"></script>		
+		<script src="../compiled/flipclock.js"></script>		
 	</head>
 	<body>
 		<div class="clock" style="margin:2em;"></div>
@@ -14,14 +14,20 @@
 
 			$(document).ready(function() {
 
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+
 				// Calculate the difference in seconds between the future and current date
-				var diff = new Date('March 27, 2015')
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
 
 				// Instantiate a coutdown FlipClock
 				clock = $('.clock').FlipClock(diff, {
 					clockFace: 'DailyCounter',
-					countdown: true, 
-                    showSeconds: false
+					countdown: true,
+					showSeconds: false
 				});
 			});
 		</script>
